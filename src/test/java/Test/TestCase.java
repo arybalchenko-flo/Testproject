@@ -16,7 +16,7 @@ public class TestCase {
     @Test
     public void Test()
     {
-        System.setProperty("webdriver.chrome.driver", "J:\\WebDriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         WebDriver driver = new ChromeDriver(); // настройка драйвера
         driver.manage().window().maximize(); // фуллскрин
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); //задержка

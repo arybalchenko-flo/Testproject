@@ -14,7 +14,7 @@ public class SearchRes {
     }
 
     //Добавить в корзину
-    By addbutton = By.xpath("/html/body/mvid-root/div/mvid-srp/mvid-layout/div/main/mvid-product-list-block/div[2]/mvid-product-list/mvid-plp-product-cards-layout/div/mvid-product-cards-row/div[1]/mvid-plp-product-checkout[1]/div/div[1]/mvid-plp-checkout-tooltip/mvid-plp-cart-button/mvid-button/button/span");
+    By addbutton = By.xpath("//button[@type='submit'][@title='Добавить в корзину']");
 
     //Переход в корзину
     By carticon = By.cssSelector("a.link[title='Корзина']");

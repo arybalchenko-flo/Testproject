@@ -13,10 +13,10 @@ public class Cart {
     }
 
     //Кнопка удалить
-    By delfromcart = By.xpath("//div[2]/div[2]/span/div[1]/span/a");
+    By delfromcart = By.xpath("//div[@class='c-cart-item__delete-wrapper']/descendant::span/descendant::div/descendant::span/descendant::a[2]");
     //Подтвердить удаление
    // By confirmdel = By.xpath("/html/body/div[10]/div/div[2]/div/a");
-    By confirmdel = By.xpath("/html/body/div[17]/div/div[2]/div/a/span");
+    By confirmdel = By.xpath("//div[@class='c-popup__content']/descendant::div/descendant::a");
     By emptycart = By.cssSelector("div.c-cart__empty");
 
 

@@ -1,26 +1,26 @@
 package Pages;
 
+import Base.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SearchResultPage
+public class SearchResultPage extends Base
 {
-    WebDriver driver;
-    //Драйвер
     public SearchResultPage(WebDriver driver)
     {
         this.driver = driver;
     }
     //Добавить в корзину
-    By addbutton = By.xpath("//button[@type='submit'][@title='Добавить в корзину']");
+    By addButton = By.xpath("//button[@type='submit'][@title='Добавить в корзину']");
     //Переход в корзину
-    By carticon = By.cssSelector("a.link[title='Корзина']");
+    By cartIcon = By.cssSelector("a.link[title='Корзина']");
     //Добавить в корзину
-    public void addtocart() {
-        driver.findElement(addbutton).click();
+    public void addToCart()
+    {
+        driver.findElement(addButton).click();
     }
     //Переход в корзину
-    public void gotocart() {
+    public void goToCart() {
         try
         {
             Thread.sleep(10000); // 10 секунд ожидания, т.к. товар не сразу появляется в корзине при переходе по ссылке если ожидание не прописать
@@ -28,6 +28,6 @@ public class SearchResultPage
         catch(InterruptedException e)
         {
         }
-        driver.findElement(carticon).click();
+        driver.findElement(cartIcon).click();
     }
 }

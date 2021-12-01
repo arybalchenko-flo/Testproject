@@ -1,5 +1,6 @@
 package Test;
 
+import Base.Base;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -10,12 +11,12 @@ import Pages.MainPage;
 import Pages.SearchResultPage;
 import java.time.Duration;
 
-public class TestCase
+public class TestCase extends Base
 {
     WebDriver driver = new ChromeDriver(); // настройка драйвера
     MainPage main = new MainPage(driver);
     SearchResultPage result = new SearchResultPage(driver);
-    CartPage cart = new CartPage(driver);
+     CartPage cart = new CartPage(driver);
 
     @Before
     public void Beginning()
@@ -30,18 +31,18 @@ public class TestCase
     public void Test()
     {
         //Поиск товара
-        main.search();
+        main.search("MGMT3RU/A\n");
 
         //Добавить в корзину
-        result.addtocart();
+        result.addToCart();
         //Перейти в корзину
-        result.gotocart();
+        result.goToCart();
         //Проверка на наличие товара в корзине
-        cart.emptycart();
+        cart.emptyCart();
         //Удаление товара из корзины
         cart.clickDelete();
         //Проверка на наличие товара в корзине
-        cart.emptycart();
+        cart.emptyCart();
     }
 
     @After

@@ -1,33 +1,33 @@
 package Pages;
 
+import Base.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-public class CartPage {
-    WebDriver driver;
-
+public class CartPage extends Base
+{
     public CartPage(WebDriver driver)
     {
         this.driver = driver;
     }
     //Кнопка удалить
-    By delfromcart = By.xpath("//div[@class='c-cart-item__delete-wrapper']/descendant::span/descendant::div/descendant::span/descendant::a[2]");
+    By delFromCart = By.xpath("//div[@class='c-cart-item__delete-wrapper']/descendant::span/descendant::div/descendant::span/descendant::a[2]");
     //Подтвердить удаление
-    By confirmdel = By.xpath("//div[@class='c-popup__content']/descendant::div/descendant::a");
-    By emptycart = By.cssSelector("div.c-cart__empty");
+    By confirmDel = By.xpath("//div[@class='c-popup__content']/descendant::div/descendant::a");
+    By emptyCart = By.cssSelector("div.c-cart__empty");
     //Удаление из корзины
     public void clickDelete()
     {
-        driver.findElement(delfromcart).click();
-        driver.findElement(confirmdel).click();
+        driver.findElement(delFromCart).click();
+        driver.findElement(confirmDel).click();
     }
 //Чек пустой корзины
-    public void emptycart()
+    public void emptyCart()
     {
         try
         {
-            driver.findElement(emptycart);
+            driver.findElement(emptyCart);
             System.out.println("Goods deleted from cart successfully");
         }
         catch (NoSuchElementException e)

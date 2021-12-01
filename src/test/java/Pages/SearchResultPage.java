@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SearchRes {
+public class SearchResultPage {
 
     WebDriver driver;
 
     //Драйвер
-    public SearchRes(WebDriver driver) {
+    public SearchResultPage(WebDriver driver) {
         this.driver = driver;
     }
 

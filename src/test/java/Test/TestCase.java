@@ -1,15 +1,18 @@
 package Test;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import Pages.Cart;
+import Pages.CartPage;
 import Pages.MainPage;
-import Pages.SearchRes;
+import Pages.SearchResultPage;
 import java.util.concurrent.TimeUnit;
 
 public class TestCase {
 
+    
     public static void main(String[] args) { //Требует мейн для запуска, с этим проблемка
     }
 
@@ -24,9 +27,9 @@ public class TestCase {
 
         MainPage main = new MainPage(driver);
 
-        SearchRes result = new SearchRes(driver);
+        SearchResultPage result = new SearchResultPage(driver);
 
-        Cart cart = new Cart(driver);
+        CartPage cart = new CartPage(driver);
         //Поиск товара
         main.search();
 

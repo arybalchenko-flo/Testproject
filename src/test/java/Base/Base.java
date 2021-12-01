@@ -16,7 +16,7 @@ public static WebDriver driver;
         WebElement sendKey = driver.findElement(key_locator);
         sendKey.sendKeys(keysToSend);
     }
-    public static void find(By locator) //нахождение элемента и клик по нему
+    public static void find(By locator) //нахождение элемента
     {
         driver.findElement(locator);
     }

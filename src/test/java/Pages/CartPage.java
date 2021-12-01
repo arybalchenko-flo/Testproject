@@ -9,7 +9,7 @@ public class CartPage extends Base
 {
     public CartPage(WebDriver driver)
     {
-        this.driver = driver;
+        Base.driver = driver;
     }
     //Кнопка удалить
     By delFromCart = By.xpath("//div[@class='c-cart-item__delete-wrapper']/descendant::span/descendant::div/descendant::span/descendant::a[2]");
@@ -19,15 +19,15 @@ public class CartPage extends Base
     //Удаление из корзины
     public void clickDelete()
     {
-        driver.findElement(delFromCart).click();
-        driver.findElement(confirmDel).click();
+        Base.click(delFromCart);
+        Base.click(confirmDel);
     }
 //Чек пустой корзины
     public void emptyCart()
     {
         try
         {
-            driver.findElement(emptyCart);
+            Base.find(emptyCart);
             System.out.println("Goods deleted from cart successfully");
         }
         catch (NoSuchElementException e)

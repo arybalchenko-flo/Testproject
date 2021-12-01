@@ -8,13 +8,13 @@ public class MainPage extends Base
 {
     public MainPage(WebDriver driver)
     {
-        this.driver=driver;
+        Base.driver=driver;
     }
   //Поле для поиска
     By searchBar = By.className("input__field");
   //Поиск
-    public void search(String searchData)
+    public void search(String keysToSend)
     {
-        driver.findElement(searchBar).sendKeys(searchData);
+        Base.sendKey(searchBar, keysToSend);
     }
 }

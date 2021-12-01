@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import Pages.CartPage;
 import Pages.MainPage;
 import Pages.SearchResultPage;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class TestCase {
 
@@ -22,7 +22,7 @@ public class TestCase {
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         WebDriver driver = new ChromeDriver(); // настройка драйвера
         driver.manage().window().maximize(); // фуллскрин
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); //задержка
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); //задержка
         driver.get("https://mvideo.ru"); //открыть сайт
 
         MainPage main = new MainPage(driver);

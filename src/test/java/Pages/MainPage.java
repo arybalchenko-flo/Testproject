@@ -12,7 +12,7 @@ public class MainPage extends Base
     }
   //Поле для поиска
     By searchBar = By.className("input__field");
-  // Поиск
+  //Начало поиска
     public void search(String keysToSend)
     {
         Base.sendKey(searchBar, keysToSend);

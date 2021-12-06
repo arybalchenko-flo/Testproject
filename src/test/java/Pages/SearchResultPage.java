@@ -12,7 +12,7 @@ public class SearchResultPage extends Base
     }
     //Локатор кнопки "Добавить в корзину"
     By addButton = By.xpath("//button[@type='submit'][@title='Добавить в корзину']");
-    //Переход в корзину
+    //Локатор кнопки перехода в корзину
     By cartIcon = By.cssSelector("a.link[title='Корзина']");
     //Добавить в корзину
     public void addToCart() {
@@ -23,7 +23,7 @@ public class SearchResultPage extends Base
     {
         try
         {
-            Thread.sleep(10000); // 10 секунд ожидания, т.к. товар не сразу появляется в корзине при переходе по ссылке если ожидание не прописать
+            Thread.sleep(10000); // 10 секунд ожидания, т.к. товар не сразу появляется в корзине при переходе по ссылке, если ожидание не прописать
         }
         catch(InterruptedException e)
         {

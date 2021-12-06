@@ -43,7 +43,7 @@ public class TestCase extends Base
         cart.emptyCart();
         //Удаление товара из корзины
         cart.clickDelete();
-        //Проверка на наличие товара в корзине
+        //Проверка товара на наличие в корзине
         cart.emptyCart();
     }
 

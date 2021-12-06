@@ -11,7 +11,7 @@ public class CartPage extends Base
     {
         Base.driver = driver;
     }
-    //Кнопка удалить
+    //Локатор кнопки удалить
     By delFromCart = By.xpath("//div[@class='c-cart-item__delete-wrapper']/descendant::span/descendant::div/descendant::span/descendant::a[2]");
     //Подтвердить удаление
     By confirmDel = By.xpath("//div[@class='c-popup__content']/descendant::div/descendant::a");

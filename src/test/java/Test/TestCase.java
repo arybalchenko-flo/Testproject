@@ -9,11 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import Pages.CartPage;
 import Pages.MainPage;
 import Pages.SearchResultPage;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class TestCase extends Base
 {
-    WebDriver driver = new ChromeDriver(); // настройка драйвера
+
     MainPage main = new MainPage(driver);
     SearchResultPage result = new SearchResultPage(driver);
      CartPage cart = new CartPage(driver);

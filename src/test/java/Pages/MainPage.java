@@ -2,19 +2,36 @@ package Pages;
 
 import Base.Base;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MainPage extends Base
 {
-    public MainPage(WebDriver driver)
+
+    //Кнопка скачать
+   private static final By downloadBtn = By.cssSelector("a.js-download");
+   private static final By photoSelect = By.cssSelector("article.photo-item");
+
+    //Наведение курсора на фото
+    public static void moveToPhoto()
     {
-        Base.driver=driver;
+        WebElement photo = wait.until(ExpectedConditions.visibilityOfElementLocated(photoSelect));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(photo);
+        actions.perform();
     }
-  //Поле для поиска
-    By searchBar = By.className("input__field");
-  //Начало поиска
-    public void search(String keysToSend)
+
+    //Клик на кнопку скачать
+    public static void downloadClick()
     {
-        Base.sendKey(searchBar, keysToSend);
+        Base.click(downloadBtn);
+        try
+        {
+            Thread.sleep(5000); // 5 секунд ожидания загрузки
+        }
+        catch (InterruptedException e)
+        {
+        }
     }
 }
